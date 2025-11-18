@@ -1,8 +1,5 @@
 ## A step by step solver for math
-
-[![Join the chat at https://gitter.im/mathsteps-chat/Lobby](https://badges.gitter.im/mathsteps-chat/Lobby.svg)](https://gitter.im/mathsteps-chat/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
-https://www.youtube.com/watch?v=iCrargw1rrM
+# WIP porting/fixing to make it work on a esp32...
 
 ## Requirements
 
@@ -10,9 +7,7 @@ Mathsteps requires Node version > 6.0.0
 
 ## Usage
 
-To install mathsteps using npm:
-
-    npm install mathsteps
+No npm package here...
 
 ```js
 const mathsteps = require('mathsteps');
@@ -39,8 +34,6 @@ steps.forEach(step => {
 });
 ```
 
-(if you're using mathsteps v0.1.6 or lower, use `.print()` instead of `.ascii()`)
-
 To see all the change types:
 ```js
 const changes = mathsteps.ChangeTypes;
@@ -57,7 +50,7 @@ Learn more here: [CONTRIBUTING.md](CONTRIBUTING.md).
 
 First clone the project from github:
 
-    git clone https://github.com/google/mathsteps.git
+    git clone https://github.com/dovisp/mathsteps-calc.git
     cd mathsteps
 
 Install the project dependencies:
