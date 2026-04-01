@@ -9,3 +9,5 @@ const equation = mathsteps.solveEquation({
   comparator: "=",
   unknownVariable: "x",
 });
+
+console.log(equation.toString());
