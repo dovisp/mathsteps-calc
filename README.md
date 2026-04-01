@@ -1,11 +1,8 @@
 # Mathsteps - A step by step solver for math
 
-[![CircleCI](https://circleci.com/gh/kemu-studio/mathsteps.svg?style=svg)](https://app.circleci.com/pipelines/github/kemu-studio/mathsteps.svg)
-[![Git Commit](https://img.shields.io/github/last-commit/kemu-studio/mathsteps.svg?style=flat)](https://github.com/kemu-studio/mathsteps/commits/master)
+# WIP porting to make it work on a esp32...
 
-# Demo ![Calculla.com](https://calculla.com/g/calculla_logo_small_32.png)
-
-To see this version of mathsteps in action go to [calculla.com](https://calculla.com). For example it's used in [Sum of angles calculator](https://calculla.com/sum_of_angles_in_triangle), so you can put something like "1/3 pi" into alpha and beta angles and it will show you all steps needed to achieve "1/3 pi" result.
+lots of funi things will be made here..
 
 ## Requirements
 
@@ -13,37 +10,39 @@ Mathsteps requires Node version > 6.0.0
 
 ## Usage
 
-To install mathsteps using npm:
-
-    npm install mathsteps
+No npm package here...
 
 ```js
-const mathsteps = require('mathsteps');
+const mathsteps = require("mathsteps");
 
-const steps = mathsteps.simplifyExpression('2x + 2x + x + x');
+const steps = mathsteps.simplifyExpression("2x + 2x + x + x");
 
-steps.forEach(step => {
-        console.log("before change: " + step.oldNode.toString());   // before change: 2 x + 2 x + x + x
-        console.log("change: " + step.changeType);                  // change: ADD_POLYNOMIAL_TERMS
-        console.log("after change: " + step.newNode.toString());    // after change: 6 x
-        console.log("# of substeps: " + step.substeps.length);      // # of substeps: 3
+steps.forEach((step) => {
+  console.log("before change: " + step.oldNode.toString()); // before change: 2 x + 2 x + x + x
+  console.log("change: " + step.changeType); // change: ADD_POLYNOMIAL_TERMS
+  console.log("after change: " + step.newNode.toString()); // after change: 6 x
+  console.log("# of substeps: " + step.substeps.length); // # of substeps: 3
 });
 ```
 
 To solve an equation:
+
 ```js
 const result = mathsteps.solveEquation({
-  equationAsText: '2x + 3x = 35',
-  unknownVariable: 'x',
-  onStepCb: function(step) {
-    console.log(`[ ${step.equation.getId()} ] ${step.stepId} | ${step.equation}`)
-  }
-})
+  equationAsText: "2x + 3x = 35",
+  unknownVariable: "x",
+  onStepCb: function (step) {
+    console.log(
+      `[ ${step.equation.getId()} ] ${step.stepId} | ${step.equation}`,
+    );
+  },
+});
 ```
 
 (if you're using mathsteps v0.1.6 or lower, use `.print()` instead of `.ascii()`)
 
 To see all the change types:
+
 ```js
 const changes = mathsteps.ChangeTypes;
 ```
@@ -57,7 +56,7 @@ Learn more here: [CONTRIBUTING.md](CONTRIBUTING.md).
 
 First clone the project from github:
 
-    git clone https://github.com/socraticorg/mathsteps.git
+    git clone https://github.com/dovisp/mathsteps-calc.git
     cd mathsteps
 
 Install the project dependencies:
